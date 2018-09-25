@@ -1,0 +1,18 @@
+body {
+    background-color: #F4E5CB;
+    margin: 0;
+}
+
+p {
+    color: white ;
+    background: #B2C8D1;
+    padding:50px;
+    margin-left: 20px;
+    text-align: center;
+    font-size: 20;
+    font-family: sans-serif
+}
+
+canvas {
+  border-radius: 12px;
+}
