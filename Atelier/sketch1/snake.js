@@ -10,8 +10,8 @@ class Snake {
   }
   
   setDir(x, y) {
-  	this.xdir = x;
-    this.ydir = y;
+  	this.xdir = x*1.5;
+    this.ydir = y*1.5;
   }
   
   update() {
@@ -55,6 +55,8 @@ class Snake {
         munch.play();   
         points+= 1 ;
         print(points);
+        
+    
     }
     return false;
   }
@@ -63,7 +65,7 @@ class Snake {
   	for(var i = 0; i < this.body.length; i++) {
         noStroke();
     	fill("#ffb5c2");
-      ellipse(this.body[i].x, this.body[i].y,3)
+      rect(this.body[i].x, this.body[i].y,3,3,1)
     }
   }
 

@@ -4,13 +4,15 @@ var food;
 var w;
 var h;
 var munch;
+var music;
 var points= 0;
 var level = 1;
 var button; 
 
 
 function setup() {
-  createCanvas(windowWidth,windowHeight);
+  createCanvas(1420,500);
+frameRate(30);
   w = floor(width / rez);
   h = floor(height / rez);
   frameRate(7);
@@ -22,11 +24,10 @@ function setup() {
   soundFormats('mp3', 'ogg');
   munch = loadSound('assets/munch.mp3');
     
-   var points = 0; 
+  soundFormats('mp3', 'ogg');
+  music= loadSound('assets/music.mp3');
     
-    button = createButton("Click to Start");
-    button.position(0,0);
-    button.mousePressed(startGame);
+   var points = 0; 
     
 }
 
@@ -38,7 +39,10 @@ function foodLocation() {
 }
 
 function keyPressed() {
-  if(keyCode === LEFT_ARROW) {
+
+
+    
+    if(keyCode === LEFT_ARROW) {
     snake.setDir(-1, 0);
   } else if (keyCode === RIGHT_ARROW) {
     snake.setDir(1, 0);
@@ -48,43 +52,15 @@ function keyPressed() {
     snake.setDir(0, -1);
   } else if (key == ' ') {
     snake.grow();
+   
   }
 
 }
 
 function draw() {
 
-     background("#F4E5CB");
-    border();
-    startGame();
-
-function levelup(){
-    
-scale(1);
-
-fill("#B2C8D1");
-rect(0,0,12,2);
-
-    fill("white");
-textSize(1);
-text("Level " + level, 2, 1.5);
-text("Points" + points,6, 1.5);
-
-
-
-}
-
-
-function border() {
-    
-  stroke(255);
-  rect(0,0,width,height);
-}
-
-
-
-function startGame(){
-    
+      background("#F4E5CB");
+  
     
   scale(rez);
   if (snake.eat(food)) {
@@ -97,27 +73,40 @@ function startGame(){
   snake.update();
   snake.show();
    noStroke();
-	
+	    collectpoints();
 //fill("#F476D1");
-
-image(kity,food.x,food.y,3);
+scale(1);
+image(kity,food.x,food.y,3,3);
     
   if (snake.endGame()) {
      
     print("END GAME");
-    background("#B6A895");
+    background("#ECECEC");
        noLoop();
+      textAlign(CENTER);
       textSize(3);
-      fill("#FFB5C2");
-      
-      textAlign(CENTER);	
-text('GAME OVER',18,10);
+      fill("white");	
+      text('GAME OVER',36,20);
 
-  }
+}
     
-    levelup();
+}
+
+function collectpoints(){
+    
+scale(1);
+
+fill("#DBDCDD");
+rect(0,0,12,2,0.5);
+
+    fill("white");
+textSize(1);
+text("Level " + level, 2, 1.5);
+text("Points" + points,6, 1.5);
+
+
+
 }
 
 
 
-}
