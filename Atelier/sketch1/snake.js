@@ -1,3 +1,5 @@
+
+
 class Snake {
     
   
@@ -53,15 +55,14 @@ class Snake {
       this.grow();
       return true;
         munch.play();   
-        points+= 1 ;
-        print(points);
-        
-    
+        print(points);  
     }
     return false;
   }
   
   show() {
+
+
   	for(var i = 0; i < this.body.length; i++) {
         noStroke();
     	fill("#ffb5c2");
@@ -70,3 +71,5 @@ class Snake {
   }
 
 }
+
+
