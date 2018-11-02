@@ -1,10 +1,7 @@
-
-
-
 body {
     background-color: #FAF9E9;
     margin: 0;
-     font-family:fantasy;
+     font-family: impact;
 }
 
 h1 {
@@ -12,8 +9,7 @@ h1 {
         color: antiquewhite;
     text-align: center;
     font-size: 70;
-    font-family: fantasy;
-    
+    font-family: impact;
     
 }
 
@@ -22,14 +18,24 @@ p {
      border-radius: 12px;
     color: white ;
     background: #DBDCDD;
-    padding:50px;
-    margin-left: 20px;
+    padding:0px;
+    margin-left: auto;
+    margin-right: auto;
     text-align: center;
     font-size: 20;
-    font-family:fantasy;
+    font-family: impact;
+    letter-spacing: 2px;
+    
 }
 
 canvas {
   border-radius: 12px;
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: 800px;
+}
   
 }

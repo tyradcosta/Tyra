@@ -31,7 +31,7 @@ function setup() {
     munch = loadSound('assets/munch.mp3');
     
 //create game screen
-createCanvas(1420,500);
+createCanvas(1430,710);
 w = floor(width / rez);
 h = floor(height / rez);
 frameRate(7);
@@ -80,7 +80,7 @@ scale(rez);
 if (snake.eat(food)) {
  foodLocation();
 points+=10 ;
-if(points >= 10){level+= 1;};
+//if(points >= 10){level+= 1;};
   print(points);
    munch.play();  
 }
@@ -131,6 +131,8 @@ else{
 }
 }
 
+
+// function to change level after every 20 points
 function levelup(){
 bee = {
     x: random(500),
@@ -139,15 +141,15 @@ bee = {
     ydir: 10,
     s:1   
 }
-    if(points >= 50) {level=2;};
-    if(points >= 100){level=3};
-    if(points >= 150){level=4};
-    if(points >= 200){level=5};
-    if(points >= 250){level=6};
-    if(points >= 300){level=7};
-    if(points >= 350){level=8};
-    if(points >= 400){level=9};
-    if(points >= 450){level=10};
+    if(points >= 20) {level=2;};
+    if(points >= 40){level=3};
+    if(points >= 60){level=4};
+    if(points >= 80){level=5};
+    if(points >= 100){level=6};
+    if(points >= 120){level=7};
+    if(points >= 140){level=8};
+    if(points >= 160){level=9};
+    if(points >= 180){level=10};
 }
 
 
